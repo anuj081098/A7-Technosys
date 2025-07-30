@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automotive PCB Design: Meeting AEC-Q100 Standards and Harsh Environment Requirements | A7 Technosys</title>
+  <meta name="description" content="Master automotive PCB design with AEC-Q100 standards, temperature cycling, vibration resistance, EMC compliance, and component qualification requirements.">
+  <meta name="keywords" content="automotive PCB, AEC-Q100, automotive electronics, harsh environment PCB, temperature cycling, vibration testing, automotive standards">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.a7technosys.com/blog-automotive-pcb.html">
+  
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo-nav">
+      <div class="logo">
+        <a href="index.html"><img src="images/LOGO_M.png" alt="A7 Technosys - PCB Manufacturing Company Logo" height="54"></a>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="pcb-design.html">PCB Design</a>
+        <a href="manufacturing.html">Manufacturing</a>
+        <a href="assembly.html">Assembly</a>
+        <a href="industries.html">Industries</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav style="padding: 1rem 0; color: #666; font-size: 0.9rem;">
+      <a href="index.html" style="color: #666; text-decoration: none;">Home</a> > 
+      <a href="blog.html" style="color: #666; text-decoration: none;">Blog</a> > 
+      <span>Automotive PCB Design</span>
+    </nav>
+
+    <!-- Article Header -->
+    <article style="max-width: 900px; margin: 0 auto;">
+      <header style="text-align: center; margin-bottom: 3rem;">
+        <div style="background: #dc3545; color: #fff; padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.9rem; margin-bottom: 1rem;">Automotive</div>
+        <h1 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem; color: #022e4e;">Automotive PCB Design: Meeting AEC-Q100 Standards and Harsh Environment Requirements</h1>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; color: #666;">
+          <span>📅 January 18, 2025</span>
+          <span>⏱️ 18 min read</span>
+          <span>🚗 Automotive Standards</span>
+        </div>
+        <p style="font-size: 1.2rem; color: #666; line-height: 1.6;">Automotive electronics demand the highest reliability standards. Learn the unique challenges and requirements for designing PCBs that can survive automotive environments.</p>
+      </header>
+
+      <!-- Article Content -->
+      <div style="line-height: 1.8; color: #333;">
+        
+        <p>The automotive industry presents some of the most challenging environments for electronic systems. From extreme temperature variations to intense vibrations, automotive PCBs must operate reliably for 15+ years under conditions that would quickly destroy consumer electronics. This comprehensive guide covers the essential requirements, standards, and design practices for automotive PCB design.</p>
+
+        <div style="background: #f8d7da; padding: 2rem; border-radius: 10px; margin: 2rem 0; border-left: 4px solid #dc3545;">
+          <h4 style="color: #721c24; margin-top: 0;">⚠️ Critical Reality Check</h4>
+          <p style="margin-bottom: 0; color: #721c24;">Automotive PCB failures can result in safety hazards, expensive recalls, and legal liability. The design and qualification process is rigorous, time-consuming, and expensive—but absolutely essential.</p>
+        </div>
+
+        <h2 style="color: #022e4e; margin: 2rem 0 1rem 0; font-size: 1.8rem;">The Automotive Electronics Landscape</h2>
+        <p>Modern vehicles contain 50-100 Electronic Control Units (ECUs), managing everything from engine control to entertainment systems. The automotive electronics market is expected to reach $650 billion by 2030, driven by trends like electrification, autonomous driving, and connectivity.</p>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Key Application Areas</h3>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Powertrain control:</strong> Engine management, transmission control, hybrid systems</li>
+          <li><strong>Safety systems:</strong> ABS, airbags, electronic stability control</li>
+          <li><strong>Body electronics:</strong> Lighting, HVAC, power windows</li>
+          <li><strong>Infotainment:</strong> Audio, navigation, connectivity</li>
+          <li><strong>ADAS:</strong> Cameras, radar, LiDAR, sensor fusion</li>
+          <li><strong>Electrification:</strong> Battery management, charging systems, inverters</li>
+        </ul>
+
+        <h2 style="color: #022e4e; margin: 2rem 0 1rem 0; font-size: 1.8rem;">Understanding AEC-Q100 Standards</h2>
+        <p>AEC-Q100 is the Automotive Electronics Council standard for qualifying integrated circuits for automotive use. While it doesn't directly cover PCBs, understanding these requirements is crucial for automotive PCB design.</p>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">AEC-Q100 Temperature Grades</h3>
+        <div style="background: #e8f4fd; padding: 2rem; border-radius: 10px; margin: 2rem 0; border-left: 4px solid #0056b3;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr style="background: #f8f9fa;">
+              <th style="border: 1px solid #dee2e6; padding: 1rem; text-align: left;">Grade</th>
+              <th style="border: 1px solid #dee2e6; padding: 1rem; text-align: center;">Temperature Range</th>
+              <th style="border: 1px solid #dee2e6; padding: 1rem; text-align: left;">Typical Applications</th>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #dee2e6; padding: 1rem;"><strong>Grade 0</strong></td>
+              <td style="border: 1px solid #dee2e6; padding: 1rem; text-align: center;">-40°C to +150°C</td>
+              <td style="border: 1px solid #dee2e6; padding: 1rem;">Engine compartment, exhaust systems</td>
+            </tr>
+            <tr style="background: #f8f9fa;">
+              <td style="border: 1px solid #dee2e6; padding: 1rem;"><strong>Grade 1</strong></td>
+              <td style="border: 1px solid #dee2e6; padding: 1rem; text-align: center;">-40°C to +125°C</td>
+              <td style="border: 1px solid #dee2e6; padding: 1rem;">Under-hood electronics, powertrain</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #dee2e6; padding: 1rem;"><strong>Grade 2</strong></td>
+              <td style="border: 1px solid #dee2e6; padding: 1rem; text-align: center;">-40°C to +105°C</td>
+              <td style="border: 1px solid #dee2e6; padding: 1rem;">Passenger compartment</td>
+            </tr>
+            <tr style="background: #f8f9fa;">
+              <td style="border: 1px solid #dee2e6; padding: 1rem;"><strong>Grade 3</strong></td>
+              <td style="border: 1px solid #dee2e6; padding: 1rem; text-align: center;">-40°C to +85°C</td>
+              <td style="border: 1px solid #dee2e6; padding: 1rem;">Infotainment, comfort systems</td>
+            </tr>
+          </table>
+        </div>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Key AEC-Q100 Test Requirements</h3>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Temperature cycling:</strong> 1000 cycles minimum</li>
+          <li><strong>High temperature operating life:</strong> 1000 hours at maximum temperature</li>
+          <li><strong>Autoclave/Unbiased HAST:</strong> Humidity and temperature stress</li>
+          <li><strong>Temperature humidity bias:</strong> Combined stress testing</li>
+          <li><strong>Power temperature cycling:</strong> Thermal cycling under power</li>
+        </ul>
+
+        <h2 style="color: #022e4e; margin: 2rem 0 1rem 0; font-size: 1.8rem;">Harsh Environment Challenges</h2>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Temperature Extremes</h3>
+        <p>Automotive environments subject electronics to extreme temperature variations:</p>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Engine compartment:</strong> -40°C to +150°C operational range</li>
+          <li><strong>Rapid cycling:</strong> Quick transitions from cold start to full operating temperature</li>
+          <li><strong>Thermal gradients:</strong> Different areas of the same PCB at different temperatures</li>
+          <li><strong>Thermal shock:</strong> Sudden temperature changes during operation</li>
+        </ul>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Mechanical Stress</h3>
+        <p>Vehicles subject electronics to constant mechanical stress:</p>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Engine vibration:</strong> 20-2000 Hz frequency range</li>
+          <li><strong>Road vibration:</strong> Random vibration from road surfaces</li>
+          <li><strong>Shock loads:</strong> Sudden impacts from potholes, speed bumps</li>
+          <li><strong>Mounting stress:</strong> PCB flexure from chassis movement</li>
+        </ul>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Chemical and Environmental</h3>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Humidity:</strong> Up to 95% relative humidity</li>
+          <li><strong>Salt spray:</strong> Corrosive road salt exposure</li>
+          <li><strong>Chemical exposure:</strong> Engine fluids, cleaning chemicals</li>
+          <li><strong>UV radiation:</strong> Dashboard and exterior applications</li>
+        </ul>
+
+        <h2 style="color: #022e4e; margin: 2rem 0 1rem 0; font-size: 1.8rem;">PCB Design for Automotive Applications</h2>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Material Selection</h3>
+        <p>Standard FR4 is often insufficient for automotive applications. Consider these alternatives:</p>
+
+        <div style="background: #d4edda; padding: 2rem; border-radius: 10px; margin: 2rem 0; border-left: 4px solid #28a745;">
+          <h4 style="color: #155724; margin-top: 0;">Automotive-Grade Materials</h4>
+          <ul style="margin: 1rem 0; padding-left: 2rem; color: #155724;">
+            <li><strong>High-Tg FR4:</strong> Glass transition temperature >170°C</li>
+            <li><strong>Polyimide:</strong> Excellent high-temperature performance (-55°C to +260°C)</li>
+            <li><strong>Rogers materials:</strong> Low-loss, high-frequency applications</li>
+            <li><strong>Metal core:</strong> Superior thermal management</li>
+            <li><strong>Flexible materials:</strong> Vibration and flexure resistance</li>
+          </ul>
+        </div>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Thermal Management</h3>
+        <p>Effective thermal management is critical for automotive PCB reliability:</p>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Thermal vias:</strong> Dense via arrays under high-power components</li>
+          <li><strong>Heavy copper:</strong> 2-4oz copper for power distribution and heat spreading</li>
+          <li><strong>Thermal interface materials:</strong> Efficient heat transfer to chassis</li>
+          <li><strong>Component placement:</strong> Thermal isolation of sensitive components</li>
+          <li><strong>Heat sinks and spreaders:</strong> External thermal management</li>
+        </ul>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Mechanical Design</h3>
+        <p>PCB mechanical design must address vibration and shock:</p>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Board thickness:</strong> Thicker boards (1.6-3.2mm) for stiffness</li>
+          <li><strong>Support structures:</strong> Strategic support points to minimize flexure</li>
+          <li><strong>Component placement:</strong> Heavy components near support points</li>
+          <li><strong>Flexible sections:</strong> Stress relief in high-flex areas</li>
+          <li><strong>Conformal coating:</strong> Protection from vibration and environment</li>
+        </ul>
+
+        <h2 style="color: #022e4e; margin: 2rem 0 1rem 0; font-size: 1.8rem;">EMC (Electromagnetic Compatibility) Requirements</h2>
+        <p>Automotive EMC requirements are among the most stringent in the electronics industry, governed by standards like CISPR 25 and ISO 11452.</p>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">EMI (Electromagnetic Interference) Control</h3>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Grounding strategy:</strong> Multi-point grounding with low impedance paths</li>
+          <li><strong>Power plane design:</strong> Continuous planes with minimal splits</li>
+          <li><strong>Clock signal management:</strong> Proper routing and termination</li>
+          <li><strong>Filtering:</strong> Ferrite beads, capacitors at appropriate locations</li>
+          <li><strong>Shielding:</strong> Compartmentalization of sensitive circuits</li>
+        </ul>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">EMS (Electromagnetic Susceptibility) Protection</h3>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Input protection:</strong> TVS diodes, surge suppressors</li>
+          <li><strong>Power supply filtering:</strong> Robust input filtering design</li>
+          <li><strong>Signal conditioning:</strong> Proper impedance matching and termination</li>
+          <li><strong>Isolation:</strong> Optical or magnetic isolation where required</li>
+        </ul>
+
+        <div style="background: #fff3cd; padding: 2rem; border-radius: 10px; margin: 2rem 0; border-left: 4px solid #ffc107;">
+          <h4 style="color: #856404; margin-top: 0;">🔍 EMC Testing Requirements</h4>
+          <ul style="margin: 1rem 0; padding-left: 2rem; color: #856404;">
+            <li><strong>Radiated emissions:</strong> 150 kHz to 1 GHz (sometimes higher)</li>
+            <li><strong>Conducted emissions:</strong> 150 kHz to 30 MHz</li>
+            <li><strong>Radiated immunity:</strong> 80 MHz to 18 GHz, up to 200 V/m</li>
+            <li><strong>Conducted immunity:</strong> Various test methods and levels</li>
+            <li><strong>Transient immunity:</strong> ISO 7637 pulses</li>
+          </ul>
+        </div>
+
+        <h2 style="color: #022e4e; margin: 2rem 0 1rem 0; font-size: 1.8rem;">Component Selection and Qualification</h2>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Automotive-Grade Components</h3>
+        <p>All components must meet automotive qualification standards:</p>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>AEC-Q100 ICs:</strong> Integrated circuits qualified for automotive use</li>
+          <li><strong>AEC-Q200 passives:</strong> Resistors, capacitors, inductors</li>
+          <li><strong>AEC-Q101 discretes:</strong> Diodes, transistors, discrete semiconductors</li>
+          <li><strong>Operating life:</strong> Minimum 15-year operational life</li>
+          <li><strong>Supply chain:</strong> Guaranteed long-term availability</li>
+        </ul>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Component Placement Strategies</h3>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Thermal zones:</strong> Group components by thermal requirements</li>
+          <li><strong>Criticality grouping:</strong> Separate safety-critical from non-critical</li>
+          <li><strong>Power distribution:</strong> Minimize power loop inductance</li>
+          <li><strong>Signal integrity:</strong> Careful placement of high-speed circuits</li>
+          <li><strong>Testability:</strong> Access for in-circuit and functional testing</li>
+        </ul>
+
+        <h2 style="color: #022e4e; margin: 2rem 0 1rem 0; font-size: 1.8rem;">Design Validation and Testing</h2>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Environmental Testing</h3>
+        <p>Comprehensive environmental testing is mandatory for automotive applications:</p>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Temperature cycling:</strong> -40°C to +85/105/125/150°C</li>
+          <li><strong>Humidity testing:</strong> 85°C/85% RH for extended periods</li>
+          <li><strong>Vibration testing:</strong> Random and sinusoidal vibration</li>
+          <li><strong>Shock testing:</strong> Half-sine, sawtooth, and trapezoidal pulses</li>
+          <li><strong>Salt spray:</strong> Corrosion resistance validation</li>
+        </ul>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Electrical Testing</h3>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Power cycling:</strong> Repeated power on/off cycles</li>
+          <li><strong>Load dump testing:</strong> ISO 7637-2 transient tests</li>
+          <li><strong>EMC testing:</strong> CISPR 25 and ISO 11452 compliance</li>
+          <li><strong>ESD testing:</strong> Human body model and machine model</li>
+          <li><strong>Functional testing:</strong> Full operational validation</li>
+        </ul>
+
+        <h2 style="color: #022e4e; margin: 2rem 0 1rem 0; font-size: 1.8rem;">Manufacturing Considerations</h2>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Assembly Process Control</h3>
+        <p>Automotive assembly requires exceptional process control:</p>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Solder joint reliability:</strong> IPC Class 3 standards minimum</li>
+          <li><strong>Process monitoring:</strong> Statistical process control (SPC)</li>
+          <li><strong>Traceability:</strong> Complete component and process traceability</li>
+          <li><strong>Testing coverage:</strong> 100% electrical testing typical</li>
+          <li><strong>Quality systems:</strong> ISO/TS 16949 or IATF 16949 certification</li>
+        </ul>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Supply Chain Management</h3>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Supplier qualification:</strong> Automotive-qualified suppliers only</li>
+          <li><strong>Long-term agreements:</strong> 15+ year supply commitments</li>
+          <li><strong>Change control:</strong> Rigorous change notification process</li>
+          <li><strong>Counterfeit prevention:</strong> Authorized distribution channels</li>
+          <li><strong>Risk management:</strong> Supply chain risk assessment and mitigation</li>
+        </ul>
+
+        <div style="background: #f8d7da; padding: 2rem; border-radius: 10px; margin: 2rem 0; border-left: 4px solid #dc3545;">
+          <h4 style="color: #721c24; margin-top: 0;">⚠️ Common Automotive PCB Failures</h4>
+          <ul style="margin: 1rem 0; padding-left: 2rem; color: #721c24;">
+            <li><strong>Thermal cycling fatigue:</strong> Solder joint cracking from CTE mismatches</li>
+            <li><strong>Vibration failures:</strong> Component lead fatigue, wire bond failures</li>
+            <li><strong>Corrosion:</strong> Moisture ingress causing metal migration</li>
+            <li><strong>Connector issues:</strong> Fretting corrosion, contact degradation</li>
+            <li><strong>Power cycling:</strong> Bond wire fatigue in power semiconductors</li>
+          </ul>
+        </div>
+
+        <h2 style="color: #022e4e; margin: 2rem 0 1rem 0; font-size: 1.8rem;">Future Trends in Automotive Electronics</h2>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Electrification Impact</h3>
+        <p>The shift to electric vehicles creates new challenges:</p>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>High voltage systems:</strong> 400V-800V+ DC bus voltages</li>
+          <li><strong>Power electronics:</strong> SiC and GaN devices requiring new design approaches</li>
+          <li><strong>Thermal management:</strong> Even more critical with high-power systems</li>
+          <li><strong>EMI challenges:</strong> High-frequency switching creates new EMI issues</li>
+        </ul>
+
+        <h3 style="color: #ff6f00; margin: 1.5rem 0 1rem 0;">Autonomous Driving Requirements</h3>
+        <ul style="margin: 1rem 0; padding-left: 2rem;">
+          <li><strong>Functional safety:</strong> ISO 26262 ASIL D requirements</li>
+          <li><strong>High-speed interfaces:</strong> Automotive Ethernet, SerDes links</li>
+          <li><strong>Redundancy:</strong> Fail-safe and fail-operational systems</li>
+          <li><strong>Real-time processing:</strong> Ultra-low latency requirements</li>
+        </ul>
+
+        <h2 style="color: #022e4e; margin: 2rem 0 1rem 0; font-size: 1.8rem;">Conclusion</h2>
+        <p>Automotive PCB design requires a fundamental shift in mindset from consumer electronics. The combination of extreme environmental conditions, stringent reliability requirements, and comprehensive testing makes automotive one of the most challenging application areas in electronics design.</p>
+        
+        <p>Success in automotive electronics requires deep understanding of the standards, close collaboration with automotive-qualified suppliers, and rigorous design and testing processes. While the barriers to entry are high, the automotive market offers significant opportunities for companies that can meet these demanding requirements.</p>
+
+        <p>At A7 Technosys, we have extensive experience in automotive PCB design and manufacturing, with expertise in AEC-Q standards, environmental testing, and automotive supply chain management. Our automotive-qualified processes ensure your designs meet the highest standards of reliability and performance.</p>
+
+      </div>
+
+      <!-- Standards Reference -->
+      <section style="margin: 4rem 0; padding: 2rem; background: #f8f9fa; border-radius: 15px;">
+        <h3 style="color: #022e4e; margin-bottom: 2rem; text-align: center;">Key Automotive Standards Reference</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <div style="background: #fff; padding: 1.5rem; border-radius: 10px;">
+            <h4 style="color: #dc3545; margin-bottom: 1rem;">Component Standards</h4>
+            <ul style="font-size: 0.9rem; margin: 0; padding-left: 1.5rem;">
+              <li>AEC-Q100 (ICs)</li>
+              <li>AEC-Q101 (Discretes)</li>
+              <li>AEC-Q200 (Passives)</li>
+              <li>AEC-Q104 (Multichip)</li>
+            </ul>
+          </div>
+          <div style="background: #fff; padding: 1.5rem; border-radius: 10px;">
+            <h4 style="color: #dc3545; margin-bottom: 1rem;">EMC Standards</h4>
+            <ul style="font-size: 0.9rem; margin: 0; padding-left: 1.5rem;">
+              <li>CISPR 25 (Emissions)</li>
+              <li>ISO 11452 (Immunity)</li>
+              <li>ISO 7637 (Transients)</li>
+              <li>IEC 61000 series</li>
+            </ul>
+          </div>
+          <div style="background: #fff; padding: 1.5rem; border-radius: 10px;">
+            <h4 style="color: #dc3545; margin-bottom: 1rem;">Safety Standards</h4>
+            <ul style="font-size: 0.9rem; margin: 0; padding-left: 1.5rem;">
+              <li>ISO 26262 (Functional Safety)</li>
+              <li>IEC 61508 (Base Safety)</li>
+              <li>ISO 21448 (SOTIF)</li>
+              <li>UN ECE regulations</li>
+            </ul>
+          </div>
+          <div style="background: #fff; padding: 1.5rem; border-radius: 10px;">
+            <h4 style="color: #dc3545; margin-bottom: 1rem;">Quality Standards</h4>
+            <ul style="font-size: 0.9rem; margin: 0; padding-left: 1.5rem;">
+              <li>IATF 16949 (Quality)</li>
+              <li>IPC-A-610 Class 3</li>
+              <li>IPC-6012 Class 3</li>
+              <li>J-STD-001 Class 3</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section style="text-align: center; background: linear-gradient(135deg, #022e4e 0%, #0056b3 100%); color: #fff; padding: 3rem 2rem; margin: 3rem 0; border-radius: 15px;">
+        <h3 style="color: #fff; margin-bottom: 1rem;">Need Automotive-Grade PCB Solutions?</h3>
+        <p style="margin-bottom: 2rem; opacity: 0.9;">Our automotive-qualified team can help you navigate the complex requirements of automotive PCB design and manufacturing.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn-primary">Get Automotive Consultation</a>
+          <a href="industries.html" class="btn-secondary">View Automotive Solutions</a>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 A7 Technosys. Headquartered in Delhi/Noida, India. | PCB Design, Manufacturing & Full Assembly.</p>
+      <p>
+        <a href="mailto:sales@a7technosys.com">sales@a7technosys.com</a> | +91-XXXXXXXXXX | Sector XX, Noida, UP
+      </p>
+      <p>
+        <a href="https://wa.me/91XXXXXXXXXX">WhatsApp Us</a> | <a href="#">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/scripts.js"></script>
+</body>
+</html>
