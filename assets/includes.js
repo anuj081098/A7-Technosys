@@ -1,31 +1,66 @@
-// Load Header and Footer
-async function loadIncludes() {
+// Header and Footer HTML content
+const headerHTML = `
+<header>
+  <div class="logo-nav">
+    <div class="logo">
+      <a href="index.html"><img src="images/logoa7.png" alt="A7 Technosys - PCB Manufacturing Company Logo" height="54"></a>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="pcb-design.html">PCB Design</a>
+      <a href="manufacturing.html">Manufacturing</a>
+      <a href="assembly.html">Assembly</a>
+      <a href="industries.html">Industries</a>
+      <a href="blog.html">Blog</a>
+      <a href="gerber-viewer.html">Gerber View</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+`;
+
+const footerHTML = `
+<footer>
+  <div class="footer-content">
+    <p>© 2025 A7 Technosys. Headquartered in Delhi/Noida, India. | PCB Design, Manufacturing & Full Assembly.</p>
+    <p>
+      <strong>Reg. Address:</strong> 27, 1st Floor, DSIDC Shed, Scheme 3rd, Okhla Industrial Area Phase-2, New Delhi-110020
+    </p>
+    <p>
+      <strong>Mfg. Unit:</strong> 8, DSIDC Shed, Scheme 1st, Okhla Industrial Area Phase-2, New Delhi-110020
+    </p>
+    <p>
+      <a href="mailto:a7technosys@gmail.com">a7technosys@gmail.com</a> | <a href="tel:+919936531793">+91-9936531793</a> | <a href="https://wa.me/919936531793">WhatsApp</a>
+    </p>
+    <p>
+      <a href="https://www.a7technosys.com">www.a7technosys.com</a> | <a href="#">Privacy Policy</a>
+    </p>
+  </div>
+</footer>
+`;
+
+// Load Header and Footer - Works with file:// protocol
+function loadIncludes() {
     // Load header
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (headerPlaceholder) {
-        try {
-            const response = await fetch('includes/header.html');
-            const html = await response.text();
-            headerPlaceholder.innerHTML = html;
-        } catch (error) {
-            console.error('Error loading header:', error);
-        }
+        headerPlaceholder.innerHTML = headerHTML;
     }
 
     // Load footer
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
-        try {
-            const response = await fetch('includes/footer.html');
-            const html = await response.text();
-            footerPlaceholder.innerHTML = html;
-        } catch (error) {
-            console.error('Error loading footer:', error);
-        }
+        footerPlaceholder.innerHTML = footerHTML;
     }
 
     // Initialize mobile navigation after header is loaded
-    initMobileNav();
+    setTimeout(initMobileNav, 100);
 }
 
 // Mobile Navigation Toggle
@@ -100,5 +135,3 @@ if (contactForm) {
         }
     });
 }
-
-// Images are handled by CSS and HTML - no JS manipulation needed
