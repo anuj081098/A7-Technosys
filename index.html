@@ -43,13 +43,18 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "A7 Technosys",
+    "alternateName": "A7 Technosys PCB Manufacturer",
     "url": "https://www.a7technosys.com",
     "logo": "https://www.a7technosys.com/assets/logo.png",
+    "description": "Leading PCB Manufacturer in Delhi, India. ISO 9001:2015 certified. Specializing in PCB design, manufacturing, and assembly with 24-hour prototyping service.",
+    "foundingDate": "2014",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-9936531793",
       "contactType": "customer service",
-      "email": "a7technosys@gmail.com"
+      "email": "a7technosys@gmail.com",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi"]
     },
     "address": {
       "@type": "PostalAddress",
@@ -61,14 +66,153 @@
     },
     "sameAs": [
       "https://wa.me/919936531793"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "500"
+    },
+    "priceRange": "₹₹",
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "28.5355",
+        "longitude": "77.2831"
+      }
+    },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "PCB Manufacturing",
+          "description": "Single, double, and multilayer PCB manufacturing with fast turnaround"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "PCB Design Services",
+          "description": "Professional PCB design, schematic capture, and layout optimization"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "PCB Assembly",
+          "description": "SMT and through-hole PCB assembly with component sourcing"
+        }
+      }
     ]
   }
   </script>
+  
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.a7technosys.com/"
+    }]
+  }
+  </script>
+
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "PCB Manufacturing and Design",
+    "provider": {
+      "@type": "Organization",
+      "name": "A7 Technosys"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "PCB Services",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "PCB Design Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Schematic Design"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "PCB Layout"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "PCB Manufacturing",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Prototype PCB"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Volume Production"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+  </script>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="index.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body>
+  <!-- Page Loader -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <div class="loader-text">A7 Technosys</div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('pageLoader');
+      setTimeout(() => {
+        loader.classList.add('loaded');
+      }, 50);
+    });
+  </script>
+
   <!-- Header -->
   <div id="header-placeholder"></div>
 
@@ -151,7 +295,14 @@
         </div>
       </div>
     </div>
-    <!-- Key Value Propositions -->
+    <!-- Navigation Dots -->
+    <div class="carousel-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+      <span class="dot" data-slide="3"></span>
+    </div>
+     <!-- Key Value Propositions -->
     <div class="usps">
       <div>⚡ 24-Hour Prototypes</div>
       <div>🔄 Unlimited Design Changes</div>
@@ -160,218 +311,10 @@
       <div>📅 On-time Delivery</div>
       <div>🏆 ISO Certified Quality</div>
     </div>
-    <!-- Navigation Dots -->
-    <div class="carousel-dots">
-      <span class="dot active" data-slide="0"></span>
-      <span class="dot" data-slide="1"></span>
-      <span class="dot" data-slide="2"></span>
-      <span class="dot" data-slide="3"></span>
-    </div>
-
     <!-- Arrow Navigation -->
     <button class="carousel-arrow prev" aria-label="Previous slide">‹</button>
     <button class="carousel-arrow next" aria-label="Next slide">›</button>
   </div>
-
-  <style>
-    .hero-carousel-wrapper {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #f0f8ff 0%, #e8f4f8 100%);
-      min-height: 520px;
-      padding:0 1%;
-    }
-
-    .hero-carousel {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .hero-slide {
-      display: none;
-      padding: 2rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      align-items: center;
-      gap: 3rem;
-      opacity: 0;
-      transition: opacity 0.6s ease-in-out;
-    }
-
-    .hero-slide.active {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      opacity: 1;
-    }
-
-    .hero-content {
-      text-align: left;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: #ff6f00;
-      color: #fff;
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      letter-spacing: 0.5px;
-    }
-
-    .hero-slide h1 {
-      font-size: 2.5rem;
-      color: #022e4e;
-      margin: 0 0 0.5rem;
-      line-height: 1.2;
-    }
-
-    .hero-slide h2 {
-      font-size: 1.2rem;
-      color: #555;
-      font-weight: 400;
-      margin: 0 0 1.5rem;
-    }
-
-    .highlight-text {
-      color: #ff6f00;
-      font-weight: 700;
-    }
-
-    .hero-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.5rem;
-    }
-
-    .hero-features li {
-      font-size: 1rem;
-      color: #333;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-cta .btn-primary {
-      display: inline-block;
-      background: #ff6f00;
-      color: #fff;
-      padding: 0.9rem 1.8rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    .hero-cta .btn-primary:hover {
-      background: #e55a00;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 111, 0, 0.4);
-    }
-
-    .hero-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-visual img {
-      max-width: 100%;
-      height: auto;
-      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
-    }
-
-    .carousel-dots {
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    .dot {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(2, 46, 78, 0.3);
-      margin: 0 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .dot.active {
-      background: #ff6f00;
-      width: 30px;
-      border-radius: 6px;
-    }
-
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.9);
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 2rem;
-      color: #022e4e;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      z-index: 10;
-    }
-
-    .carousel-arrow:hover {
-      background: #fff;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .carousel-arrow.prev {
-      left: 20px;
-    }
-
-    .carousel-arrow.next {
-      right: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .hero-slide.active {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .hero-content {
-        text-align: center;
-      }
-
-      .hero-slide h1 {
-        font-size: 1.8rem;
-      }
-
-      .hero-slide h2 {
-        font-size: 1rem;
-      }
-
-      .hero-visual {
-        order: -1;
-      }
-
-      .carousel-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-      }
-
-      .carousel-arrow.prev {
-        left: 10px;
-      }
-
-      .carousel-arrow.next {
-        right: 10px;
-      }
-    }
-  </style>
 
   <script>
     (function () {
@@ -442,609 +385,297 @@
 
   <!-- Main Content Sections -->
   <main>
-    <section>
-      <h2 class="text-center">Our Comprehensive PCB Services & Products</h2>
-      <p class="text-center">From concept to delivery, we provide end-to-end PCB solutions tailored to your specific requirements. <br>
-        <span style="color:gray"><!-- TODO: Expand with technical guides and FAQs for each service --></span>
-      </p>
+  <section class="service-section page-section">
+      <div class="section-header">
+      <h2 class="section-title">Our Comprehensive PCB Services & Products</h2>
+      <p class="section-description">From concept to delivery, we provide end-to-end PCB solutions tailored to your specific requirements.</p>
+      </div>
+      <div class="section-grid">
+        <a href="pcb-design.html"><div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>PCB Design Services</h3>
+          <div class="service-image">
+            <img src="images/portfolio/1.JPG" alt="PCB Design & Development – Single Layer & Multi Layer">
+          </div>
+          <ul class="service-list">
+            <li>✓ Schematic capture & design</li>
+            <li>✓ PCB layout optimization</li>
+            <li>✓ DFM (Design for Manufacturing)</li>
+            <li>✓ Signal integrity analysis</li>
+            <li>✓ 3D modeling & visualization</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-badge">Expert Design</span>
+          </div>
+        </div>
+        </a>  
+        <a href="pcb-manufacturing.html" ><div class="service-card">
+          <div class="service-icon">⚙️</div>
+          <h3>PCB Manufacturing</h3>
+          <div class="service-image">
+            <img src="images/portfolio/2.JPG" alt="PCB Sample – Delivered within 24 Hours">
+          </div>
+          <ul class="service-list">
+            <li>✓ Single, double & multilayer PCBs</li>
+            <li>✓ FR4, CEM1 & metal core boards</li>
+            <li>✓ HASL, ENIG & lead-free finishes</li>
+            <li>✓ Prototype to high-volume production</li>
+            <li>✓ Custom specifications available</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-badge">24hr Delivery</span>
+          </div>
+        </div></a>  
 
-      <div class="grid-3">
-        <div>
-          <h3>🎨 PCB Design Services</h3>
-             <img src="images/portfolio/1.JPG" alt="PCB Design & Development – Single Layer & Multi Layer">
-          <ul>
-            <li>Schematic capture & design</li>
-            <li>PCB layout optimization</li>
-            <li>DFM (Design for Manufacturing)</li>
-            <li>Signal integrity analysis</li>
-            <li>3D modeling & visualization</li>
+        <a href="pcb-assembly.html" ><div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>PCB Assembly</h3>
+          <div class="service-image">
+            <img src="images/pcb-assembly.jpg" alt="PCB Assembly – For SMT and LED Mounting">
+          </div>
+          <ul class="service-list">
+            <li>✓ SMT & through-hole assembly</li>
+            <li>✓ Component sourcing & procurement</li>
+            <li>✓ Box-build & system integration</li>
+            <li>✓ Functional testing</li>
+            <li>✓ Quality control & inspection</li>
           </ul>
-        </div>
+          <div class="service-footer">
+            <span class="service-badge">Turnkey Solution</span>
+          </div>
+        </div></a>
 
-        <div>
-          <h3>⚙️ PCB Manufacturing</h3>
-          <img src="images/portfolio/2.JPG" alt="PCB Sample – Delivered within 24 Hours">
-          <ul>
-            <li>Single, double & multilayer PCBs</li>
-            <li>FR4, CEM1 & metal core boards</li>
-            <li>HASL, ENIG & lead-free finishes</li>
-            <li>Prototype to high-volume production</li>
-            <li>Custom specifications available</li>
+        <a href="products.html" ><div class="service-card">
+          <div class="service-icon">🖨️</div>
+          <h3>PCB Stencils</h3>
+          <div class="service-image">
+            <img src="images/portfolio/7.JPG" alt="PCB Stencil – For SMT and LED Mounting">
+          </div>
+          <ul class="service-list">
+            <li>✓ Laser-cut stainless steel stencils</li>
+            <li>✓ SMT paste deposition accuracy</li>
+            <li>✓ Fine pitch & micro BGA support</li>
+            <li>✓ Custom frame & frameless options</li>
+            <li>✓ Rapid turnaround for prototypes</li>
           </ul>
-        </div>
+          <div class="service-footer">
+            <span class="service-badge">Precision Cut</span>
+          </div>
+        </div></a>
 
-        <div>
-          <h3>🔧 PCB Assembly</h3>
-          <img src="images/pcb-assembly.JPG" alt="PCB Assembly – For SMT and LED Mounting">
-          <ul>
-            <li>SMT & through-hole assembly</li>
-            <li>Component sourcing & procurement</li>
-            <li>Box-build & system integration</li>
-            <li>Functional testing</li>
-            <li>Quality control & inspection</li>
+        <a href="products.html"><div class="service-card">
+          <div class="service-icon">🔌</div>
+          <h3>Wire & Connectors</h3>
+          <div class="service-image">
+            <img src="images/portfolio/8.JPG" alt="Wire Connector – Male/Female, With Wire Connector">
+          </div>
+          <ul class="service-list">
+            <li>✓ Standard & custom wiring harnesses</li>
+            <li>✓ Male/Female PCB connectors</li>
+            <li>✓ Terminal blocks & pin headers</li>
+            <li>✓ Crimping & assembly services</li>
+            <li>✓ Bulk supply for OEM production</li>
           </ul>
-        </div>
-        <div>
-          <h3>🖨️ PCB Stencils</h3>
-          <img src="images/portfolio/7.JPG" alt="PCB Stencil – For SMT and LED Mounting">
-          <ul>
-            <li>Laser-cut stainless steel stencils</li>
-            <li>SMT paste deposition accuracy</li>
-            <li>Fine pitch & micro BGA support</li>
-            <li>Custom frame & frameless options</li>
-            <li>Rapid turnaround for prototypes</li>
-          </ul>
-        </div>
-        <div>
-          <h3>🔌 Wire & Connectors</h3>
-          <img src="images/portfolio/8.JPG" alt="Wire Connector – Male/Female, With Wire Connector">
-          <ul>
-            <li>Standard & custom wiring harnesses</li>
-            <li>Male/Female PCB connectors</li>
-            <li>Terminal blocks & pin headers</li>
-            <li>Crimping & assembly services</li>
-            <li>Bulk supply for OEM production</li>
-          </ul>
-        </div>
+          <div class="service-footer">
+            <span class="service-badge">Custom Solutions</span>
+          </div>
+        </div></a>
       </div>
     </section>
-     <section>
-      <h2 class="text-center">Why Choose A7 Technosys for Your PCB Needs?</h2>
-      <p class="text-center">As a leading PCB manufacturer in Delhi, we understand the critical importance of quality, speed, and reliability in electronics manufacturing. Our comprehensive PCB solutions have powered innovations across industries from automotive to IoT, LED lighting to industrial automation.</p>
+
+    <!-- Why Choose Section -->
+  <section class="why-choose-section page-section">
+      <div class="section-header">
+        <div class="section-badge">Our Competitive Edge</div>
+        <h2 class="section-title">Why Choose A7 Technosys for Your PCB Needs?</h2>
+        <p class="section-description">As a leading PCB manufacturer in Delhi, we understand the critical importance of quality, speed, and reliability in electronics manufacturing. Our comprehensive PCB solutions have powered innovations across industries from automotive to IoT, LED lighting to industrial automation.</p>
+      </div>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-          <h3>🚀 Lightning-Fast Prototyping</h3>
+      <div class="section-grid">
+        <div class="why-card" data-aos="fade-up" data-delay="0">
+          <div class="why-icon-wrapper">
+            <div class="why-icon">🚀</div>
+          </div>
+          <h3>Lightning-Fast Prototyping</h3>
           <p>Sample PCBs ready in just 24 hours, bulk production in 3-7 days. Our streamlined process ensures you never miss critical project deadlines.</p>
+          <div class="why-highlight">24-48 hrs turnaround</div>
         </div>
         
-        <div style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-          <h3>🏭 Complete Manufacturing Solution</h3>
+        <div class="why-card" data-aos="fade-up" data-delay="100">
+          <div class="why-icon-wrapper">
+            <div class="why-icon">🏭</div>
+          </div>
+          <h3>Complete Manufacturing Solution</h3>
           <p>Design, manufacturing, and assembly under one roof. No third-party delays, complete quality control, and seamless project management.</p>
+          <div class="why-highlight">End-to-end service</div>
         </div>
         
-        <div style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-          <h3>🎯 Industry Expertise</h3>
+        <div class="why-card" data-aos="fade-up" data-delay="200">
+          <div class="why-icon-wrapper">
+            <div class="why-icon">🎯</div>
+          </div>
+          <h3>Industry Expertise</h3>
           <p>Specialized PCB solutions for LED lighting, automotive electronics, IoT devices, industrial automation, and consumer electronics.</p>
+          <div class="why-highlight">500+ projects delivered</div>
         </div>
         
-        <div style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-          <h3>💬 Unlimited Design Support</h3>
+        <div class="why-card" data-aos="fade-up" data-delay="300">
+          <div class="why-icon-wrapper">
+            <div class="why-icon">💬</div>
+          </div>
+          <h3>Unlimited Design Support</h3>
           <p>Free design consultations, unlimited revisions, and expert engineering support throughout your project lifecycle.</p>
+          <div class="why-highlight">Free consultation</div>
         </div>
         
-        <div style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-          <h3>🌐 Digital-First Approach</h3>
+        <div class="why-card" data-aos="fade-up" data-delay="400">
+          <div class="why-icon-wrapper">
+            <div class="why-icon">🌐</div>
+          </div>
+          <h3>Digital-First Approach</h3>
           <p>Easy online ordering, real-time project tracking, instant quotes, and digital file management for seamless collaboration.</p>
+          <div class="why-highlight">Online ordering</div>
         </div>
         
-        <div style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-          <h3>✅ Quality Assurance</h3>
+        <div class="why-card" data-aos="fade-up" data-delay="500">
+          <div class="why-icon-wrapper">
+            <div class="why-icon">✅</div>
+          </div>
+          <h3>Quality Assurance</h3>
           <p>ISO 9001:2015 certified processes, 100% E-testing, AOI inspection, and comprehensive quality checks at every stage.</p>
+          <div class="why-highlight">ISO 9001:2015</div>
         </div>
       </div>
     </section>
-    <!-- Quote Form Section -->
-    <div id="quote-form-section">
-      <!-- Vertical Floating Quote Button -->
-      <button id="quote-float-btn" aria-label="Get Quote">GET QUOTE</button>
 
-      <!-- Quote Popup Modal -->
-      <div id="quote-popup">
-        <button type="button" id="close-quote-popup" aria-label="Close">&times;</button>
-        <h2>Get a Quote</h2>
-        <form id="quoteForm" action="https://formsubmit.co/a7technosys@gmail.com" method="POST">
-          <!-- FormSubmit Configuration (dynamic fields added by JS) -->
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" style="display:none">
-          <!-- _subject, _autoresponse, reference, and offer_code will be added dynamically on submit -->
-          
-          <div class="form-group">
-            <label for="quote-name">Name *</label>
-            <input type="text" id="quote-name" name="name" required placeholder="Enter your name">
-          </div>
-          
-          <div class="form-group">
-            <label for="quote-phone">Phone Number *</label>
-            <input type="number" id="quote-phone" name="phone" required placeholder="Enter phone number">
-          </div>
-          
-          <div class="form-group">
-            <label for="quote-email">Email *</label>
-            <input type="email" id="quote-email" name="email" required placeholder="Enter email address">
-          </div>
-          
-          <div class="form-group">
-            <label for="quote-company">Company</label>
-            <input type="text" id="quote-company" name="company" placeholder="Company name (optional)">
-          </div>
-          
-          <div class="form-group">
-            <label for="quote-service">Service Required *</label>
-            <select id="quote-service" name="service" required>
-              <option value="">-- Select Service --</option>
-              <option value="PCB Design">PCB Design</option>
-              <option value="PCB Manufacturing">PCB Manufacturing</option>
-              <option value="PCB Assembly">PCB Assembly</option>
-              <option value="PCB Stencils">PCB Stencils</option>
-              <option value="Wire & Connectors">Wire & Connectors</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="quote-quantity">Quantity</label>
-            <input type="number" id="quote-quantity" name="quantity" min="1" placeholder="e.g., 100">
-          </div>
-          
-          <div class="form-group">
-            <label for="quote-message">Additional Details</label>
-            <textarea id="quote-message" name="message" rows="4" placeholder="Any specific requirements..."></textarea>
-          </div>
-          
-          <button type="submit" class="btn-submit">Request Quote</button>
-          <div id="quote-status" aria-live="polite" role="status" style="margin-top:0.75rem;"></div>
-        </form>
-      </div>
-      
-      <!-- Overlay -->
-      <div id="quote-overlay"></div>
-    </div>
-
-    <style>
-      /* Vertical Floating Button - Properly Vertical */
-      #quote-float-btn {
-        position: fixed;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        z-index: 1000;
-        background: linear-gradient(135deg, #ff6f00 0%, #e55a00 100%);
-        color: #fff;
-        border: none;
-        border-radius: 8px 0 0 8px;
-        padding: 1.5rem 0.6rem;
-        cursor: pointer;
-        font-size: 0.95rem;
-        font-weight: 700;
-        letter-spacing: 3px;
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
-        box-shadow: -3px 0 15px rgba(2, 46, 78, 0.3);
-        transition: all 0.3s ease;
-        font-family: Arial, sans-serif;
-      }
-
-      #quote-float-btn:hover {
-        background: linear-gradient(135deg, #022e4e 0%, #003d7a 100%);
-        padding-right: 0.8rem;
-        box-shadow: -5px 0 20px rgba(255, 111, 0, 0.6);
-        transform: translateY(-50%) translateX(-3px);
-      }
-
-      /* Modal Popup */
-      #quote-popup {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #fff;
-        z-index: 2001;
-        padding: 2.5rem;
-        border-radius: 16px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-        width: 90%;
-        max-width: 500px;
-        max-height: 90vh;
-        overflow-y: auto;
-        box-sizing: border-box;
-        animation: slideIn 0.3s ease;
-      }
-
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translate(-50%, -48%);
-        }
-        to {
-          opacity: 1;
-          transform: translate(-50%, -50%);
-        }
-      }
-
-      #quote-popup.active {
-        display: block;
-      }
-
-      #quote-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(2, 46, 78, 0.6);
-        z-index: 2000;
-        backdrop-filter: blur(3px);
-      }
-
-      #quote-overlay.active {
-        display: block;
-      }
-
-      #close-quote-popup {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        background: #f5f5f5;
-        border: none;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        font-size: 1.5rem;
-        color: #666;
-        cursor: pointer;
-        line-height: 1;
-        transition: all 0.3s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      #close-quote-popup:hover {
-        background: #ff6f00;
-        color: #fff;
-        transform: rotate(90deg);
-      }
-
-      #quote-popup h2 {
-        margin: 0 0 1.8rem;
-        text-align: center;
-        color: #022e4e;
-        font-size: 1.9rem;
-        font-weight: 700;
-        border-bottom: 3px solid #ff6f00;
-        padding-bottom: 0.8rem;
-      }
-
-      .form-group {
-        margin-bottom: 1.2rem;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-        color: #022e4e;
-        font-size: 0.95rem;
-      }
-
-      .form-group input,
-      .form-group select,
-      .form-group textarea {
-        width: 100%;
-        padding: 0.8rem 1rem;
-        border: 2px solid #e0e0e0;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-family: inherit;
-        transition: all 0.3s;
-        box-sizing: border-box;
-        background: #fafafa;
-      }
-
-      .form-group input:focus,
-      .form-group select:focus,
-      .form-group textarea:focus {
-        outline: none;
-        border-color: #ff6f00;
-        box-shadow: 0 0 0 4px rgba(255, 111, 0, 0.1);
-        background: #fff;
-      }
-
-      .form-group select {
-        cursor: pointer;
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23022e4e' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 1rem center;
-        padding-right: 2.5rem;
-      }
-
-      .form-group textarea {
-        resize: vertical;
-        min-height: 80px;
-      }
-
-      .form-group input::placeholder,
-      .form-group textarea::placeholder {
-        color: #999;
-      }
-
-      .btn-submit {
-        width: 100%;
-        background: linear-gradient(135deg, #ff6f00 0%, #e55a00 100%);
-        color: #fff;
-        padding: 1.1rem;
-        border: none;
-        border-radius: 10px;
-        font-size: 1.15rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
-      }
-
-      .btn-submit:hover {
-        background: linear-gradient(135deg, #e55a00 0%, #cc4f00 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(255, 111, 0, 0.5);
-      }
-
-      .btn-submit:active {
-        transform: translateY(0);
-      }
-
-      /* Inline status feedback */
-      #quote-status {font-size:0.9rem; line-height:1.35;}
-      #quote-status.success {color:#0b6b2b; background:#e6f9ed; border:1px solid #b4e8c6; padding:0.55rem 0.75rem; border-radius:8px; animation:fadeIn .3s ease;}
-      #quote-status.error {color:#b00020; background:#fdecec; border:1px solid #f5b5b5; padding:0.55rem 0.75rem; border-radius:8px; animation:fadeIn .3s ease;}
-      @keyframes fadeIn {from {opacity:0; transform:translateY(-4px);} to {opacity:1; transform:translateY(0);} }
-
-      /* Responsive Design */
-      @media (max-width: 600px) {
-        #quote-popup {
-          width: 95%;
-          padding: 2rem 1.5rem;
-          max-height: 88vh;
-        }
-
-        #quote-popup h2 {
-          font-size: 1.5rem;
-          margin-bottom: 1.3rem;
-        }
-
-        .form-group {
-          margin-bottom: 1rem;
-        }
-
-        #quote-float-btn {
-          font-size: 0.8rem;
-          padding: 1.2rem 0.5rem;
-          letter-spacing: 2px;
-        }
-
-        #close-quote-popup {
-          width: 32px;
-          height: 32px;
-          font-size: 1.3rem;
-        }
-      }
-    </style>
-
-    <script>
-      (function() {
-        const quoteBtn = document.getElementById('quote-float-btn');
-        const quotePopup = document.getElementById('quote-popup');
-        const quoteOverlay = document.getElementById('quote-overlay');
-        const closeBtn = document.getElementById('close-quote-popup');
-        const quoteForm = document.getElementById('quoteForm');
-
-        // Open popup
-        quoteBtn.addEventListener('click', function() {
-          quotePopup.classList.add('active');
-          quoteOverlay.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        });
-
-        // Close popup
-        function closePopup() {
-          quotePopup.classList.remove('active');
-          quoteOverlay.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-
-        closeBtn.addEventListener('click', closePopup);
-        quoteOverlay.addEventListener('click', closePopup);
-
-        // Close on ESC key
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && quotePopup.classList.contains('active')) {
-            closePopup();
-          }
-        });
-
-        // Handle form submission via fetch API
-        quoteForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-
-          const submitBtn = quoteForm.querySelector('.btn-submit');
-          const statusBox = document.getElementById('quote-status');
-          statusBox.className = '';
-          statusBox.textContent = '';
-
-          // Honeypot check (spam bots)
-          const honey = quoteForm.querySelector('input[name="_honey"]').value;
-          if (honey) {
-            // Silently pretend success
-            statusBox.className = 'success';
-            statusBox.textContent = 'Thank you! Your request has been received.';
-            quoteForm.reset();
-            return;
-          }
-
-          submitBtn.disabled = true;
-          const originalText = submitBtn.textContent;
-          submitBtn.textContent = 'SENDING...';
-
-          // Generate unique reference ID (timestamp + random segment)
-          const reference = 'A7Q-' + new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14) + '-' + Math.random().toString(36).substring(2,6).toUpperCase();
-          // Generate a simple welcome offer code (can be validated manually when quoting)
-          const offerCode = 'WELCOME-' + reference.slice(-4);
-
-          // Get user's email for autoresponse
-          const userEmail = quoteForm.querySelector('input[name="email"]').value;
-          
-          // Prepare form data
-          const formData = new FormData(quoteForm);
-          formData.append('reference', reference);
-          formData.append('offer_code', offerCode);
-          formData.append('_subject', '🔔 New Quote Request (Ref ' + reference + ')');
-          formData.append('_replyto', userEmail);
-          formData.append('_autoresponse', 'Welcome to A7 Technosys!\n\nThank you for your quote request.\nReference: ' + reference + '\nSpecial Offer: Use code ' + offerCode + ' for a 5% discount on your first production order (valid 7 days).\n\nWhat happens next:\n1) Our team reviews your details.\n2) We may contact you for clarifications.\n3) You receive a formal quotation.\n\nNeed it faster? Call or WhatsApp +91-9936531793.\n\nRegards,\nA7 Technosys Team');
-
-          // Submit via fetch
-          fetch('https://formsubmit.co/a7technosys@gmail.com', {
-            method: 'POST',
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success === 'true' || data.success === true) {
-              statusBox.className = 'success';
-              statusBox.innerHTML = '✅ Request sent successfully! Ref <strong>' + reference + '</strong>. Offer Code: <strong>' + offerCode + '</strong>. Check your email for confirmation. <button type="button" id="copy-ref" style="margin-left:8px; background:#fff; color:#022e4e; border:1px solid #b4e8c6; padding:2px 6px; border-radius:6px; cursor:pointer; font-size:0.7rem;">Copy Ref</button>';
-              
-              // Allow user to copy the reference number
-              const copyBtn = document.getElementById('copy-ref');
-              if (copyBtn) {
-                copyBtn.addEventListener('click', () => {
-                  navigator.clipboard.writeText(reference).then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(()=> copyBtn.textContent = 'Copy Ref', 2000);
-                  });
-                });
-              }
-              
-              submitBtn.textContent = 'Sent ✓';
-              submitBtn.disabled = false;
-              
-              // Reset form after showing success
-              setTimeout(() => {
-                quoteForm.reset();
-                submitBtn.textContent = originalText;
-              }, 3000);
-            } else {
-              throw new Error('Submission failed');
-            }
-          })
-          .catch(error => {
-            console.error('Form submission error:', error);
-            statusBox.className = 'error';
-            statusBox.textContent = '❌ Submission failed. Please try again or contact us directly at +91-9936531793.';
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-          });
-        });
-      })();
-    </script>
 
     <!-- Industries We Serve Section -->
-    <section>
-      <h2 class="text-center">Industries We Serve</h2>
-      <p class="text-center" style="color: #666; font-size: 1.1rem;">We develop PCBs for different types of
-        industries and are proud to say that they are all satisfied with our services.</p>
+  <section class="industries-section page-section">
+      <div class="section-header">
+        <h2 class="section-title">Industries We Serve</h2>
+        <p class="section-description">We develop PCBs for different types of industries and are proud to say that they are all satisfied with our services.</p>
+      </div>
 
-      <div class="grid-4">
-        <div class="card-portfolio">
+      <div class="section-grid">
+        <div class="industry-card">
+          <div class="industry-overlay">🚨</div>
           <img src="images/team/1.jpg" alt="Police Bar Light and Siren PCB">
-          <h3>Police Bar Light & Siren</h3>
-          <p>Emergency vehicle lighting systems and audio warning devices</p>
+          <div class="industry-content">
+            <h3>Police Bar Light & Siren</h3>
+            <p>Emergency vehicle lighting systems and audio warning devices</p>
+            <div class="industry-tag">Public Safety</div>
+          </div>
         </div>
 
-        <div class="card-portfolio">
+        <div class="industry-card">
+          <div class="industry-overlay">💡</div>
           <img src="images/team/2.JPG" alt="LED Lighting Industry PCB">
-          <h3>LED Lighting Industry</h3>
-          <p>High-efficiency LED drivers, smart lighting, and control systems</p>
+          <div class="industry-content">
+            <h3>LED Lighting Industry</h3>
+            <p>High-efficiency LED drivers, smart lighting, and control systems</p>
+            <div class="industry-tag">Energy Efficient</div>
+          </div>
         </div>
 
-        <div class="card-portfolio">
+        <div class="industry-card">
+          <div class="industry-overlay">🏥</div>
           <img src="images/team/3.JPG" alt="Hospital & Medical Equipment PCB">
-          <h3>Medical Equipment</h3>
-          <p>Hospital devices, patient monitoring, and diagnostic equipment</p>
+          <div class="industry-content">
+            <h3>Medical Equipment</h3>
+            <p>Hospital devices, patient monitoring, and diagnostic equipment</p>
+            <div class="industry-tag">Healthcare</div>
+          </div>
         </div>
 
-        <div class="card-portfolio">
+        <div class="industry-card">
+          <div class="industry-overlay">⚡</div>
           <img src="images/team/4.JPG" alt="SMPS & Chargers PCB">
-          <h3>SMPS & Chargers</h3>
-          <p>Switch-mode power supplies and battery charging systems</p>
+          <div class="industry-content">
+            <h3>SMPS & Chargers</h3>
+            <p>Switch-mode power supplies and battery charging systems</p>
+            <div class="industry-tag">Power Systems</div>
+          </div>
         </div>
 
-        <div class="card-portfolio">
+        <div class="industry-card">
+          <div class="industry-overlay">💧</div>
           <img src="images/team/5.JPG" alt="Water Level Controller PCB">
-          <h3>Water Level Controller</h3>
-          <p>Automatic water management and pump control systems</p>
+          <div class="industry-content">
+            <h3>Water Level Controller</h3>
+            <p>Automatic water management and pump control systems</p>
+            <div class="industry-tag">Automation</div>
+          </div>
         </div>
 
-        <div class="card-portfolio">
+        <div class="industry-card">
+          <div class="industry-overlay">🔥</div>
           <img src="images/team/6.jpg" alt="Fire Alarm Control System PCB">
-          <h3>Fire Alarm Systems</h3>
-          <p>Fire detection, alarm control panels, and safety systems</p>
+          <div class="industry-content">
+            <h3>Fire Alarm Systems</h3>
+            <p>Fire detection, alarm control panels, and safety systems</p>
+            <div class="industry-tag">Safety & Security</div>
+          </div>
         </div>
 
-        <div class="card-portfolio">
+        <div class="industry-card">
+          <div class="industry-overlay">🔋</div>
           <img src="images/team/7.jpg" alt="Home UPS & Online UPS PCB">
-          <h3>UPS Systems</h3>
-          <p>Uninterruptible power supplies for home and industrial use</p>
+          <div class="industry-content">
+            <h3>UPS Systems</h3>
+            <p>Uninterruptible power supplies for home and industrial use</p>
+            <div class="industry-tag">Power Backup</div>
+          </div>
         </div>
 
-        <div
-          style="background: #fff; border-radius: 15px; padding: 1.5rem; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease;">
-          <img src="images/team/8.jpg" alt="Lift and Elevator Industry PCB"
-            style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
-          <h3 style="color: #022e4e; margin-bottom: 0.5rem;">Elevator Industry</h3>
-          <p style="color: #666; font-size: 0.9rem;">Lift control systems, floor indicators, and safety controllers</p>
+        <div class="industry-card">
+          <div class="industry-overlay">🏢</div>
+          <img src="images/team/8.jpg" alt="Lift and Elevator Industry PCB">
+          <div class="industry-content">
+            <h3>Elevator Industry</h3>
+            <p>Lift control systems, floor indicators, and safety controllers</p>
+            <div class="industry-tag">Vertical Transport</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Statistics Section -->
-    <section
-      style="background: linear-gradient(135deg, #022e4e 0%, #0056b3 100%); color: #fff; padding: 4rem 2rem; border-radius: 15px;">
-      <h2 style="text-align: center; margin-bottom: 3rem; color: #fff;">Our Achievements</h2>
-      <div
-        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
-        <div>
-          <div class="stat-number" data-target="500" style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem; color: #ff6f00;">0</div>
-          <div style="font-size: 1.1rem; opacity: 0.9;">Happy Clients</div>
+  <section class="statistics-section page-section">
+      <div class="stats-overlay"></div>
+      <div class="stats-content">
+        <div class="section-header" style="margin-bottom: 4rem;">
+          <h2 class="section-title" style="color: #fff;">Our Achievements in Numbers</h2>
+          <p class="section-description" style="color: rgba(255,255,255,0.9);">Trusted by businesses across India and beyond, delivering excellence in every PCB we manufacture</p>
         </div>
-        <div>
-          <div class="stat-number" data-target="5000" style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem; color: #ff6f00;">0</div>
-          <div style="font-size: 1.1rem; opacity: 0.9;">PCB Designs</div>
-        </div>
-        <div>
-          <div class="stat-number" data-target="50" style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem; color: #ff6f00;">0</div>
-          <div style="font-size: 1.1rem; opacity: 0.9;">Products Developed</div>
-        </div>
-        <div>
-          <div class="stat-number" data-target="200" style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem; color: #ff6f00;">0</div>
-          <div style="font-size: 1.1rem; opacity: 0.9;">Locations Served</div>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-number" data-target="500">0</div>
+            <div class="stat-label">Happy Clients</div>
+            <div class="stat-sublabel">And growing every day</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon">🎨</div>
+            <div class="stat-number" data-target="5000">0</div>
+            <div class="stat-label">PCB Designs</div>
+            <div class="stat-sublabel">Successfully manufactured</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-label">Products Developed</div>
+            <div class="stat-sublabel">Across industries</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon">🌍</div>
+            <div class="stat-number" data-target="200">0</div>
+            <div class="stat-label">Locations Served</div>
+            <div class="stat-sublabel">Pan-India delivery</div>
+          </div>
         </div>
       </div>
     </section>
@@ -1056,17 +687,17 @@
 
         function animateCounter(element) {
           const target = parseInt(element.getAttribute('data-target'));
-          const duration = 2000; // 2 seconds
-          const increment = target / (duration / 16); // 60fps
+          const duration = 2500;
+          const increment = target / (duration / 16);
           let current = 0;
 
           const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
-              element.textContent = target + '+';
+              element.textContent = target.toLocaleString() + '+';
               clearInterval(timer);
             } else {
-              element.textContent = Math.floor(current) + '+';
+              element.textContent = Math.floor(current).toLocaleString() + '+';
             }
           }, 16);
         }
@@ -1080,216 +711,164 @@
             const windowHeight = window.innerHeight || document.documentElement.clientHeight;
 
             if (rect.top <= windowHeight * 0.75 && rect.bottom >= 0) {
-              // Animate all numbers when section comes into view
               statNumbers.forEach(stat => animateCounter(stat));
               animated = true;
             }
           }
         }
 
-        // Check on scroll
         window.addEventListener('scroll', checkScroll);
-        // Check on load
         checkScroll();
       })();
     </script>
 
-    <!-- Industries We Serve -->
-    <section>
-      <h2 class="text-center">Industries We Serve with Specialized PCB Solutions</h2>
-      <p class="text-center">Our decade of experience spans across diverse industries, delivering tailored PCB solutions that meet specific
-        sector requirements:</p>
+    <!-- Industries We Serve with Specialized PCB Solutions -->
+  <section class="specialized-section page-section">
+      <div class="section-header">
+        <div class="section-badge">Specialized Solutions</div>
+        <h2 class="section-title">Industries We Serve with Specialized PCB Solutions</h2>
+        <p class="section-description">Our decade of experience spans across diverse industries, delivering tailored PCB solutions that meet specific sector requirements</p>
+      </div>
 
-      <div
-        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-        <div
-          style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #ff6f00;">
-          <h3>💡 LED Lighting Industry</h3>
-          <p>High-power LED drivers, street lighting controllers, decorative lighting PCBs, and thermal management
-            solutions for efficient lighting systems.</p>
+      <div class="specialized-grid">
+        <div class="specialized-card" data-industry="led">
+          <div class="specialized-number">01</div>
+          <div class="specialized-icon">💡</div>
+          <h3>LED Lighting Industry</h3>
+          <p>High-power LED drivers, street lighting controllers, decorative lighting PCBs, and thermal management solutions for efficient lighting systems.</p>
+          <div class="specialized-tech">
+            <span class="tech-badge">Thermal Management</span>
+            <span class="tech-badge">High Power</span>
+          </div>
         </div>
 
-        <div
-          style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #ff6f00;">
-          <h3>🚗 Automotive Electronics</h3>
-          <p>ECU modules, sensor boards, infotainment systems, and safety-critical automotive PCBs with rigorous quality
-            standards and testing.</p>
+        <div class="specialized-card" data-industry="automotive">
+          <div class="specialized-number">02</div>
+          <div class="specialized-icon">🚗</div>
+          <h3>Automotive Electronics</h3>
+          <p>ECU modules, sensor boards, infotainment systems, and safety-critical automotive PCBs with rigorous quality standards and testing.</p>
+          <div class="specialized-tech">
+            <span class="tech-badge">Safety Critical</span>
+            <span class="tech-badge">AEC-Q100</span>
+          </div>
         </div>
 
-        <div
-          style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #ff6f00;">
-          <h3>🌐 IoT & Wearables</h3>
-          <p>Miniaturized PCBs for smart devices, wireless modules, sensor networks, and wearable technology with
-            advanced routing and component integration.</p>
+        <div class="specialized-card" data-industry="iot">
+          <div class="specialized-number">03</div>
+          <div class="specialized-icon">🌐</div>
+          <h3>IoT & Wearables</h3>
+          <p>Miniaturized PCBs for smart devices, wireless modules, sensor networks, and wearable technology with advanced routing and component integration.</p>
+          <div class="specialized-tech">
+            <span class="tech-badge">Miniaturization</span>
+            <span class="tech-badge">Wireless</span>
+          </div>
         </div>
 
-        <div
-          style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #ff6f00;">
-          <h3>🏭 Industrial Automation</h3>
-          <p>Control systems, motor drives, power electronics, and industrial communication modules built for harsh
-            environments and long-term reliability.</p>
+        <div class="specialized-card" data-industry="industrial">
+          <div class="specialized-number">04</div>
+          <div class="specialized-icon">🏭</div>
+          <h3>Industrial Automation</h3>
+          <p>Control systems, motor drives, power electronics, and industrial communication modules built for harsh environments and long-term reliability.</p>
+          <div class="specialized-tech">
+            <span class="tech-badge">Industrial Grade</span>
+            <span class="tech-badge">High Reliability</span>
+          </div>
         </div>
 
-        <div
-          style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #ff6f00;">
-          <h3>📱 Consumer Electronics</h3>
-          <p>Smartphones, tablets, home appliances, gaming devices, and consumer gadgets requiring compact,
-            cost-effective PCB solutions.</p>
+        <div class="specialized-card" data-industry="consumer">
+          <div class="specialized-number">05</div>
+          <div class="specialized-icon">📱</div>
+          <h3>Consumer Electronics</h3>
+          <p>Smartphones, tablets, home appliances, gaming devices, and consumer gadgets requiring compact, cost-effective PCB solutions.</p>
+          <div class="specialized-tech">
+            <span class="tech-badge">HDI Technology</span>
+            <span class="tech-badge">Cost Optimized</span>
+          </div>
         </div>
 
-        <div
-          style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #ff6f00;">
-          <h3>⚡ Power Electronics</h3>
-          <p>Switch-mode power supplies, inverters, battery management systems, and high-power applications with thermal
-            and EMI considerations.</p>
+        <div class="specialized-card" data-industry="power">
+          <div class="specialized-number">06</div>
+          <div class="specialized-icon">⚡</div>
+          <h3>Power Electronics</h3>
+          <p>Switch-mode power supplies, inverters, battery management systems, and high-power applications with thermal and EMI considerations.</p>
+          <div class="specialized-tech">
+            <span class="tech-badge">High Voltage</span>
+            <span class="tech-badge">EMI/EMC</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ Section -->
-    <section>
-      <h2 class="text-center">Frequently Asked Questions</h2>
-      <div class="faq-container" style="margin: 2rem 0;">
+  <section class="faq-section page-section">
+      <div class="section-header">
+        <div class="section-badge">Got Questions?</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-description">Everything you need to know about our PCB manufacturing services</p>
+      </div>
+      
+      <div class="faq-container">
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>How fast can you deliver PCB prototypes?</span>
+            <div class="faq-q-content">
+              <span class="faq-number">01</span>
+              <span class="faq-text">How fast can you deliver PCB prototypes?</span>
+            </div>
             <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer">
-            <p>We offer the fastest PCB prototyping in India with sample boards ready in just 24 hours for standard
-              2-layer designs. Complex multilayer boards typically take 48-72 hours. Rush orders can be accommodated with
-              our express service.</p>
+            <p>We offer the fastest PCB prototyping in India with sample boards ready in just <strong>24 hours</strong> for standard 2-layer designs. Complex multilayer boards typically take 48-72 hours. Rush orders can be accommodated with our express service.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>What PCB materials and specifications do you support?</span>
+            <div class="faq-q-content">
+              <span class="faq-number">02</span>
+              <span class="faq-text">What PCB materials and specifications do you support?</span>
+            </div>
             <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer">
-            <p>We work with FR4, CEM1, Rogers, and metal core substrates. We handle single to 8-layer boards as standard,
-              with custom stackups available. Thickness from 0.4mm to 6mm, various copper weights, and all major surface
-              finishes including HASL, ENIG, and OSP.</p>
+            <p>We work with <strong>FR4, CEM1, Rogers, and metal core</strong> substrates. We handle single to 8-layer boards as standard, with custom stackups available. Thickness from 0.4mm to 6mm, various copper weights, and all major surface finishes including HASL, ENIG, and OSP.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>Do you provide design services or only manufacturing?</span>
+            <div class="faq-q-content">
+              <span class="faq-number">03</span>
+              <span class="faq-text">Do you provide design services or only manufacturing?</span>
+            </div>
             <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer">
-            <p>We offer complete end-to-end services including PCB design from scratch, design optimization,
-              manufacturing, assembly, and testing. Our experienced engineers can take your project from concept to
-              finished product.</p>
+            <p>We offer complete <strong>end-to-end services</strong> including PCB design from scratch, design optimization, manufacturing, assembly, and testing. Our experienced engineers can take your project from concept to finished product.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>What quality certifications do you have?</span>
+            <div class="faq-q-content">
+              <span class="faq-number">04</span>
+              <span class="faq-text">What quality certifications do you have?</span>
+            </div>
             <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="faq-answer">
-            <p>We are ISO 9001:2015 certified with comprehensive quality management systems. All PCBs undergo 100%
-              electrical testing, automated optical inspection (AOI), and thorough quality checks before shipment.</p>
+            <p>We are <strong>ISO 9001:2015 certified</strong> with comprehensive quality management systems. All PCBs undergo 100% electrical testing, automated optical inspection (AOI), and thorough quality checks before shipment.</p>
           </div>
         </div>
       </div>
     </section>
-
-    <style>
-      .faq-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .faq-item {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        overflow: hidden;
-        transition: box-shadow 0.3s ease;
-      }
-
-      .faq-item:hover {
-        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      }
-
-      .faq-question {
-        width: 100%;
-        background: transparent;
-        border: none;
-        padding: 1.5rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        text-align: left;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #022e4e;
-        transition: background 0.3s ease;
-      }
-
-      .faq-question:hover {
-        background: #f8f9fa;
-      }
-
-      .faq-question span {
-        flex: 1;
-        padding-right: 1rem;
-      }
-
-      .faq-icon {
-        flex-shrink: 0;
-        color: #ff6f00;
-        transition: transform 0.3s ease;
-      }
-
-      .faq-question[aria-expanded="true"] .faq-icon {
-        transform: rotate(180deg);
-      }
-
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease, padding 0.3s ease;
-        padding: 0 1.5rem;
-      }
-
-      .faq-answer.active {
-        max-height: 500px;
-        padding: 0 1.5rem 1.5rem 1.5rem;
-      }
-
-      .faq-answer p {
-        margin: 0;
-        color: #666;
-        line-height: 1.6;
-      }
-
-      @media (max-width: 768px) {
-        .faq-question {
-          font-size: 1rem;
-          padding: 1.2rem;
-        }
-
-        .faq-answer.active {
-          padding: 0 1.2rem 1.2rem 1.2rem;
-        }
-      }
-    </style>
 
     <script>
       (function() {
@@ -1317,9 +896,13 @@
     </script>
 
       <!-- Testimonials Section -->
-  <section class="testimonials">
-    <h2>What Our Clients Say About Us</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+  <section class="testimonials page-section">
+    <div class="section-header">
+      <div class="section-badge">Client Success Stories</div>
+      <h2 class="section-title">What Our Clients Say About Us</h2>
+      <p class="section-description">Don't just take our word for it. Hear from the electronics manufacturers, startups, and enterprises who trust A7 Technosys for their PCB design, prototyping, and manufacturing needs across India.</p>
+    </div>
+    <div class="section-grid">
       <blockquote>
         "A7 Technosys delivered our urgent LED driver batch in 48 hours with absolutely flawless quality. Their rapid
         prototyping service saved our product launch timeline. Highly recommended for any time-critical PCB
@@ -1340,25 +923,227 @@
       </blockquote>
     </div>
   </section>
+    <!-- Final Call to Action -->
+  <section class="cta-banner page-section">
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <div class="cta-badge">Limited Time Offer</div>
+      <h2>Ready to Start Your PCB Project?</h2>
+      <p>Get your professional PCB Design & prototype in 24-48 hours with unlimited design revisions and the best prices in Quality. Join 500+ satisfied clients who trust A7 Technosys for their electronics manufacturing needs.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-cta-primary">Start Your Project Today →</a>
+        <a href="#quote-form-section" class="btn-cta-secondary" onclick="document.getElementById('quote-float-btn').click(); return false;">Get Instant Quote</a>
+      </div>
+      <div class="cta-features">
+        <div class="cta-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>24hr Prototyping</span>
+        </div>
+        <div class="cta-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>ISO Certified Quality</span>
+        </div>
+        <div class="cta-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Best Price Guaranteed</span>
+        </div>
+      </div>
+    </div>
+  </section>
   </main>
-  <!-- Floating Back to Top Button (text only) -->
-  <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
-    style="position:fixed;bottom:32px;right:32px;z-index:1000;background:#25d366;color:#fff;border:none;border-radius:30px;padding:0.7rem 1.2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;">Top</button>
+
+  <!-- Enhanced Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    (function() {
+      const scrollBtn = document.getElementById('scrollToTop');
+      
+      function toggleScrollButton() {
+        if (window.pageYOffset > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      }
+
+      window.addEventListener('scroll', toggleScrollButton);
+      
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
   <!-- WhatsApp Icon at bottom left (single instance) -->
-  <a href="https://wa.me/919936531793" target="_blank"
-    style="position:fixed;bottom:32px;left:32px;z-index:1000;background:#25d366;color:#fff;border:none;border-radius:50%;width:56px;height:56px;box-shadow:0 2px 8px rgba(0,0,0,0.15);font-size:2rem;display:flex;align-items:center;justify-content:center;text-decoration:none;">
-    <img src="images/contact.png" alt="WhatsApp Contact" style="width:32px;height:32px;">
+  <a href="https://wa.me/919936531793" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+    <img src="images/contact.png" alt="WhatsApp Contact">
   </a>
-  <!-- TODO: Minify CSS/JS for faster loading -->
 
+  <!-- Get Quote Form -->
+  <div id="quote-form-section">
+    <!-- Vertical Floating Quote Button -->
+    <button id="quote-float-btn" aria-label="Get Quote">GET QUOTE</button>
 
-  <!-- Final Call to Action -->
-  <div class="cta-banner">
-    <h2>Ready to Start Your PCB Project?</h2>
-    <p>Get your professional PCB Design & prototype in 24-48 hours with unlimited design revisions and the best prices in Quality.
-      Join 500+ satisfied clients who trust A7 Technosys for their electronics manufacturing needs.</p>
-    <a href="contact.html" class="btn-primary">Start Your Project Today</a>
+    <!-- Quote Popup Modal -->
+    <div id="quote-popup">
+      <button type="button" id="close-quote-popup" aria-label="Close">&times;</button>
+      <h2>Get a Quote</h2>
+      <form id="quoteForm" action="https://formsubmit.co/a7technosys@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        
+        <div class="form-group">
+          <label for="quote-name">Name *</label>
+          <input type="text" id="quote-name" name="name" required placeholder="Enter your name">
+        </div>
+        
+        <div class="form-group">
+          <label for="quote-phone">Phone Number *</label>
+          <input type="number" id="quote-phone" name="phone" required placeholder="Enter phone number">
+        </div>
+        
+        <div class="form-group">
+          <label for="quote-email">Email *</label>
+          <input type="email" id="quote-email" name="email" required placeholder="Enter email address">
+        </div>
+        
+        <div class="form-group">
+          <label for="quote-company">Company</label>
+          <input type="text" id="quote-company" name="company" placeholder="Company name (optional)">
+        </div>
+        
+        <div class="form-group">
+          <label for="quote-service">Service Required *</label>
+          <select id="quote-service" name="service" required>
+            <option value="">-- Select Service --</option>
+            <option value="PCB Design">PCB Design</option>
+            <option value="PCB Manufacturing">PCB Manufacturing</option>
+            <option value="PCB Assembly">PCB Assembly</option>
+            <option value="PCB Stencils">PCB Stencils</option>
+            <option value="Wire & Connectors">Wire & Connectors</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="quote-quantity">Quantity</label>
+          <input type="number" id="quote-quantity" name="quantity" min="1" placeholder="e.g., 100">
+        </div>
+        
+        <div class="form-group">
+          <label for="quote-message">Additional Details</label>
+          <textarea id="quote-message" name="message" rows="4" placeholder="Any specific requirements..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">Request Quote</button>
+        <div id="quote-status" aria-live="polite" role="status" style="margin-top:0.75rem;"></div>
+      </form>
+    </div>
+    
+    <div id="quote-overlay"></div>
   </div>
+
+  <script>
+    (function() {
+      const quoteBtn = document.getElementById('quote-float-btn');
+      const quotePopup = document.getElementById('quote-popup');
+      const quoteOverlay = document.getElementById('quote-overlay');
+      const closeBtn = document.getElementById('close-quote-popup');
+      const quoteForm = document.getElementById('quoteForm');
+
+      quoteBtn.addEventListener('click', function() {
+        quotePopup.classList.add('active');
+        quoteOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      function closePopup() {
+        quotePopup.classList.remove('active');
+        quoteOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      closeBtn.addEventListener('click', closePopup);
+      quoteOverlay.addEventListener('click', closePopup);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && quotePopup.classList.contains('active')) {
+          closePopup();
+        }
+      });
+
+      quoteForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = quoteForm.querySelector('.btn-submit');
+        const statusBox = document.getElementById('quote-status');
+        statusBox.className = '';
+        statusBox.textContent = '';
+
+        const honey = quoteForm.querySelector('input[name="_honey"]').value;
+        if (honey) {
+          statusBox.className = 'success';
+          statusBox.textContent = 'Thank you! Your request has been received.';
+          quoteForm.reset();
+          return;
+        }
+
+        submitBtn.disabled = true;
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'SENDING...';
+
+        const reference = 'A7Q-' + new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14) + '-' + Math.random().toString(36).substring(2,6).toUpperCase();
+        const offerCode = 'WELCOME-' + reference.slice(-4);
+        const userEmail = quoteForm.querySelector('input[name="email"]').value;
+        
+        const formData = new FormData(quoteForm);
+        formData.append('reference', reference);
+        formData.append('offer_code', offerCode);
+        formData.append('_subject', '🔔 New Quote Request (Ref ' + reference + ')');
+        formData.append('_replyto', userEmail);
+        formData.append('_autoresponse', 'Welcome to A7 Technosys!\n\nThank you for your quote request.\nReference: ' + reference + '\nSpecial Offer: Use code ' + offerCode + ' for a 5% discount on your first production order (valid 7 days).\n\nWhat happens next:\n1) Our team reviews your details.\n2) We may contact you for clarifications.\n3) You receive a formal quotation.\n\nNeed it faster? Call or WhatsApp +91-9936531793.\n\nRegards,\nA7 Technosys Team');
+
+        fetch('https://formsubmit.co/a7technosys@gmail.com', {
+          method: 'POST',
+          body: formData,
+          headers: {'Accept': 'application/json'}
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success === 'true' || data.success === true) {
+            statusBox.className = 'success';
+            statusBox.innerHTML = '✅ Request sent! Ref <strong>' + reference + '</strong>. Offer: <strong>' + offerCode + '</strong>. Check your email.';
+            submitBtn.textContent = 'Sent ✓';
+            submitBtn.disabled = false;
+            setTimeout(() => {
+              quoteForm.reset();
+              submitBtn.textContent = originalText;
+            }, 3000);
+          } else {
+            throw new Error('Submission failed');
+          }
+        })
+        .catch(error => {
+          statusBox.className = 'error';
+          statusBox.textContent = '❌ Failed. Please try again or call +91-9936531793.';
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
+      });
+    })();
+  </script>
+
+  <!-- TODO: Minify CSS/JS for faster loading -->
 
 
   <!-- Footer -->
