@@ -878,7 +878,7 @@
           }
         });
 
-        // Handle form submission via AJAX to avoid redirect
+        // Handle form submission via fetch API
         quoteForm.addEventListener('submit', function(e) {
           e.preventDefault();
 
@@ -906,95 +906,61 @@
           // Generate a simple welcome offer code (can be validated manually when quoting)
           const offerCode = 'WELCOME-' + reference.slice(-4);
 
-          // Add hidden fields dynamically for reference and autoresponse
-          let refInput = quoteForm.querySelector('input[name="reference"]');
-          if (!refInput) {
-            refInput = document.createElement('input');
-            refInput.type = 'hidden';
-            refInput.name = 'reference';
-            quoteForm.appendChild(refInput);
-          }
-          refInput.value = reference;
-
-          let offerInput = quoteForm.querySelector('input[name="offer_code"]');
-          if (!offerInput) {
-            offerInput = document.createElement('input');
-            offerInput.type = 'hidden';
-            offerInput.name = 'offer_code';
-            quoteForm.appendChild(offerInput);
-          }
-          offerInput.value = offerCode;
-
-          let subjectInput = quoteForm.querySelector('input[name="_subject"]');
-          if (!subjectInput) {
-            subjectInput = document.createElement('input');
-            subjectInput.type = 'hidden';
-            subjectInput.name = '_subject';
-            quoteForm.appendChild(subjectInput);
-          }
-          subjectInput.value = '🔔 New Quote Request (Ref ' + reference + ')';
-
           // Get user's email for autoresponse
           const userEmail = quoteForm.querySelector('input[name="email"]').value;
           
-          let replytoInput = quoteForm.querySelector('input[name="_replyto"]');
-          if (!replytoInput) {
-            replytoInput = document.createElement('input');
-            replytoInput.type = 'hidden';
-            replytoInput.name = '_replyto';
-            quoteForm.appendChild(replytoInput);
-          }
-          replytoInput.value = userEmail;
+          // Prepare form data
+          const formData = new FormData(quoteForm);
+          formData.append('reference', reference);
+          formData.append('offer_code', offerCode);
+          formData.append('_subject', '🔔 New Quote Request (Ref ' + reference + ')');
+          formData.append('_replyto', userEmail);
+          formData.append('_autoresponse', 'Welcome to A7 Technosys!\n\nThank you for your quote request.\nReference: ' + reference + '\nSpecial Offer: Use code ' + offerCode + ' for a 5% discount on your first production order (valid 7 days).\n\nWhat happens next:\n1) Our team reviews your details.\n2) We may contact you for clarifications.\n3) You receive a formal quotation.\n\nNeed it faster? Call or WhatsApp +91-9936531793.\n\nRegards,\nA7 Technosys Team');
 
-          let autorespInput = quoteForm.querySelector('input[name="_autoresponse"]');
-          if (!autorespInput) {
-            autorespInput = document.createElement('input');
-            autorespInput.type = 'hidden';
-            autorespInput.name = '_autoresponse';
-            quoteForm.appendChild(autorespInput);
-          }
-          autorespInput.value = 'Welcome to A7 Technosys!\n\nThank you for your quote request.\nReference: ' + reference + '\nSpecial Offer: Use code ' + offerCode + ' for a 5% discount on your first production order (valid 7 days).\n\nWhat happens next:\n1) Our team reviews your details.\n2) We may contact you for clarifications.\n3) You receive a formal quotation.\n\nNeed it faster? Call or WhatsApp +91-9936531793.\n\nRegards,\nA7 Technosys Team';
-
-          // Submit form in hidden iframe to avoid redirect
-          let iframe = document.getElementById('quote-submit-frame');
-          if (!iframe) {
-            iframe = document.createElement('iframe');
-            iframe.id = 'quote-submit-frame';
-            iframe.name = 'quote-submit-frame';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
-          }
-          
-          quoteForm.target = 'quote-submit-frame';
-          
-          // Now actually submit the form (will go to iframe)
-          quoteForm.submit();
-          
-          // Show success immediately (form will submit in background)
-          setTimeout(() => {
-            statusBox.className = 'success';
-            statusBox.innerHTML = '✅ Request sent successfully! Ref <strong>' + reference + '</strong>. Offer Code: <strong>' + offerCode + '</strong>. Check your email for confirmation. <button type="button" id="copy-ref" style="margin-left:8px; background:#fff; color:#022e4e; border:1px solid #b4e8c6; padding:2px 6px; border-radius:6px; cursor:pointer; font-size:0.7rem;">Copy Ref</button>';
-            
-            // Allow user to copy the reference number
-            const copyBtn = document.getElementById('copy-ref');
-            if (copyBtn) {
-              copyBtn.addEventListener('click', () => {
-                navigator.clipboard.writeText(reference).then(() => {
-                  copyBtn.textContent = 'Copied!';
-                  setTimeout(()=> copyBtn.textContent = 'Copy Ref', 2000);
-                });
-              });
+          // Submit via fetch
+          fetch('https://formsubmit.co/a7technosys@gmail.com', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
             }
-            
-            submitBtn.textContent = 'Sent ✓';
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success === 'true' || data.success === true) {
+              statusBox.className = 'success';
+              statusBox.innerHTML = '✅ Request sent successfully! Ref <strong>' + reference + '</strong>. Offer Code: <strong>' + offerCode + '</strong>. Check your email for confirmation. <button type="button" id="copy-ref" style="margin-left:8px; background:#fff; color:#022e4e; border:1px solid #b4e8c6; padding:2px 6px; border-radius:6px; cursor:pointer; font-size:0.7rem;">Copy Ref</button>';
+              
+              // Allow user to copy the reference number
+              const copyBtn = document.getElementById('copy-ref');
+              if (copyBtn) {
+                copyBtn.addEventListener('click', () => {
+                  navigator.clipboard.writeText(reference).then(() => {
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(()=> copyBtn.textContent = 'Copy Ref', 2000);
+                  });
+                });
+              }
+              
+              submitBtn.textContent = 'Sent ✓';
+              submitBtn.disabled = false;
+              
+              // Reset form after showing success
+              setTimeout(() => {
+                quoteForm.reset();
+                submitBtn.textContent = originalText;
+              }, 3000);
+            } else {
+              throw new Error('Submission failed');
+            }
+          })
+          .catch(error => {
+            console.error('Form submission error:', error);
+            statusBox.className = 'error';
+            statusBox.textContent = '❌ Submission failed. Please try again or contact us directly at +91-9936531793.';
+            submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-            
-            // Reset form after showing success
-            setTimeout(() => {
-              quoteForm.reset();
-              submitBtn.textContent = originalText;
-            }, 3000);
-          }, 800);
+          });
         });
       })();
     </script>
