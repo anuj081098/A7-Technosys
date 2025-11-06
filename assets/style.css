@@ -980,11 +980,6 @@ article a:hover {
     max-width: 100%;
   }
   
-  .usps {
-    flex-direction: column;
-    align-items: center;
-  }
-  
   .usps div {
     width: 100%;
     max-width: 300px;
