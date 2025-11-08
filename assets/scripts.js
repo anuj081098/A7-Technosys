@@ -77,28 +77,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact form enhancement
-const contactForm = document.querySelector('form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        const name = document.querySelector('input[name="name"]').value.trim();
-        const email = document.querySelector('input[name="email"]').value.trim();
-        const requirements = document.querySelector('textarea[name="requirements"]').value.trim();
-        
-        if (!name || !email || !requirements) {
-            e.preventDefault();
-            alert('Please fill in all required fields (Name, Email, and Requirements).');
-            return false;
-        }
-        
-        // Basic email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            e.preventDefault();
-            alert('Please enter a valid email address.');
-            return false;
-        }
-    });
-}
-
-// Images are handled by CSS and HTML - no JS manipulation needed

@@ -5,6 +5,7 @@
   --color-primary-dark: #e55a00;
   --color-secondary: #022e4e;
   --color-secondary-light: #0056b3;
+  --brand-gray: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   
   /* Neutral Colors */
   --color-white: #ffffff;
@@ -466,32 +467,7 @@ img {
   transition: opacity var(--transition-base);
 }
 
-/* ==================== TESTIMONIALS ==================== */
-.testimonials {
-  background: var(--color-gray-50);
-  padding: var(--space-lg) 20px;
-  margin: var(--space-lg) 0;
-  border-radius: var(--radius-md);
-}
 
-.testimonials blockquote {
-  border-left: 4px solid var(--color-primary);
-  margin: var(--space-sm) 0;
-  padding: 1.25rem var(--space-md);
-  font-size: 1.1rem;
-  background: var(--color-white);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
-  font-style: italic;
-}
-
-.testimonials blockquote em {
-  display: block;
-  margin-top: 0.75rem;
-  font-style: normal;
-  font-weight: 600;
-  color: var(--color-secondary);
-}
 
 /* ==================== CTA BANNER ==================== */
 .cta-banner {

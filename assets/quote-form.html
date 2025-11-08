@@ -1,0 +1,59 @@
+<!-- Get Quote Form Component - Reusable Quote Popup Modal -->
+
+<!-- Quote Popup Modal -->
+<div id="quote-popup">
+    <button type="button" id="close-quote-popup" aria-label="Close">&times;</button>
+    <h2>Get a Quote</h2>
+    <form id="quoteForm" action="https://formsubmit.co/a7technosys@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none">
+      
+      <div class="form-group">
+        <label for="quote-name">Name *</label>
+        <input type="text" id="quote-name" name="name" required placeholder="Enter your name">
+      </div>
+      
+      <div class="form-group">
+        <label for="quote-phone">Phone Number *</label>
+        <input type="number" id="quote-phone" name="phone" required placeholder="Enter phone number">
+      </div>
+      
+      <div class="form-group">
+        <label for="quote-email">Email *</label>
+        <input type="email" id="quote-email" name="email" required placeholder="Enter email address">
+      </div>
+      
+      <div class="form-group">
+        <label for="quote-company">Company</label>
+        <input type="text" id="quote-company" name="company" placeholder="Company name (optional)">
+      </div>
+      
+      <div class="form-group">
+        <label for="quote-service">Service Required *</label>
+        <select id="quote-service" name="service" required>
+          <option value="">-- Select Service --</option>
+          <option value="PCB Design">PCB Design</option>
+          <option value="PCB Manufacturing">PCB Manufacturing</option>
+          <option value="PCB Assembly">PCB Assembly</option>
+          <option value="PCB Stencils">PCB Stencils</option>
+          <option value="Wire & Connectors">Wire & Connectors</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="quote-quantity">Quantity</label>
+        <input type="number" id="quote-quantity" name="quantity" min="1" placeholder="e.g., 100">
+      </div>
+      
+      <div class="form-group">
+        <label for="quote-message">Additional Details</label>
+        <textarea id="quote-message" name="message" rows="4" placeholder="Any specific requirements..."></textarea>
+      </div>
+      
+      <button type="submit" class="btn-submit">Request Quote</button>
+      <div id="quote-status" aria-live="polite" role="status" style="margin-top:0.75rem;"></div>
+    </form>
+  </div>
+  
+  <div id="quote-overlay"></div>
