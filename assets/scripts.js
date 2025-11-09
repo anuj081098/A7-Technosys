@@ -7,8 +7,13 @@ async function loadIncludes() {
             const response = await fetch('includes/header.html');
             const html = await response.text();
             headerPlaceholder.innerHTML = html;
+            // Initialize mobile navigation after header is loaded
+            setTimeout(initMobileNav, 100);
         } catch (error) {
             console.error('Error loading header:', error);
+            console.log('To fix CORS errors, run a local server: python -m http.server 8000');
+            // Try to initialize anyway in case header is inline
+            setTimeout(initMobileNav, 100);
         }
     }
 
@@ -23,9 +28,6 @@ async function loadIncludes() {
             console.error('Error loading footer:', error);
         }
     }
-
-    // Initialize mobile navigation after header is loaded
-    initMobileNav();
 }
 
 // Mobile Navigation Toggle
@@ -33,10 +35,19 @@ function initMobileNav() {
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
     
+    console.log('Initializing mobile nav...', { menuToggle, nav });
+    
     if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function() {
+        // Remove any existing listeners
+        const newMenuToggle = menuToggle.cloneNode(true);
+        menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+        
+        newMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Menu toggle clicked!');
             nav.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+            newMenuToggle.classList.toggle('active');
         });
 
         // Close mobile menu when clicking on a link
@@ -45,7 +56,7 @@ function initMobileNav() {
             link.addEventListener('click', () => {
                 if (nav.classList.contains('active')) {
                     nav.classList.remove('active');
-                    menuToggle.classList.remove('active');
+                    newMenuToggle.classList.remove('active');
                 }
             });
         });
@@ -54,14 +65,21 @@ function initMobileNav() {
         document.addEventListener('click', function(event) {
             if (!event.target.closest('header') && nav.classList.contains('active')) {
                 nav.classList.remove('active');
-                menuToggle.classList.remove('active');
+                newMenuToggle.classList.remove('active');
             }
         });
+    } else {
+        console.log('Menu toggle or nav not found. Retrying in 500ms...');
+        setTimeout(initMobileNav, 500);
     }
 }
 
 // Initialize on page load
-document.addEventListener('DOMContentLoaded', loadIncludes);
+document.addEventListener('DOMContentLoaded', function() {
+    loadIncludes();
+    // Also try to initialize mobile nav directly in case header is inline
+    setTimeout(initMobileNav, 100);
+});
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
