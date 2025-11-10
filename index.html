@@ -1175,25 +1175,32 @@
   <link rel="stylesheet" href="assets/quote-form.css">
   <div id="quote-form-container"></div>
   <script>
-    fetch('assets/quote-form.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('quote-form-container').innerHTML = html;
-        // Load the JS after HTML is inserted
-        const s = document.createElement('script');
-        s.src = 'assets/quote-form.js';
-        document.body.appendChild(s);
-      })
-      .catch(error => {
-        console.error('Error loading quote form:', error);
-        console.log('To fix CORS errors, run a local server: python -m http.server 8000');
-      });
+    (function(){
+      const container = document.getElementById('quote-form-container');
+      const isFile = window.location.protocol === 'file:';
+      if (isFile) {
+        // Fallback simplified inline form when running from local file system
+        container.innerHTML = `\n<form class="inline-quote-form" style="background:#fff;padding:1.5rem;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,0.08);max-width:420px;">\n  <h3 style=\"margin-top:0;color:#022e4e;\">Quick Quote (Local Preview)</h3>\n  <label>Name*<br><input name=\"name\" required style=\"width:100%;margin:.4rem 0;padding:.55rem;border:1px solid #ccc;border-radius:6px;\"></label>\n  <label>Email*<br><input name=\"email\" type=\"email\" required style=\"width:100%;margin:.4rem 0;padding:.55rem;border:1px solid #ccc;border-radius:6px;\"></label>\n  <label>Requirements*<br><textarea name=\"requirements\" rows=3 required style=\"width:100%;margin:.4rem 0;padding:.55rem;border:1px solid #ccc;border-radius:6px;\"></textarea></label>\n  <button type=\"submit\" style=\"background:#ff6f00;color:#fff;border:none;padding:.7rem 1.2rem;border-radius:8px;cursor:pointer;font-weight:600;margin-top:.5rem;\">Send</button>\n  <p style=\"font-size:.75rem;color:#666;margin-top:.6rem;\">Full dynamic form loads when served via HTTP.</p>\n</form>`;
+        return; // Skip fetch under file://
+      }
+      fetch('assets/quote-form.html')
+        .then(r => r.text())
+        .then(html => {
+          container.innerHTML = html;
+          const s = document.createElement('script');
+          s.src = 'assets/quote-form.js';
+          document.body.appendChild(s);
+        })
+        .catch(error => {
+          console.error('Error loading quote form:', error);
+          container.innerHTML = '<p style="color:#c00">Quote form failed to load. Try refreshing or run a local server.</p>';
+        });
+    })();
   </script>
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
   <script src="https://kit.fontawesome.com/99851b73ea.js" crossorigin="anonymous" defer></script>
-  <script src="assets/includes.js"></script>
   <script src="assets/scripts.js"></script>
 </body>
 
